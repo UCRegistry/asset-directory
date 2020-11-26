@@ -1,0 +1,37 @@
+{
+  "name": "@ucregistry/asset-directory",
+  "version": "3.1.6",
+  "description": "Metadata for digital assets",
+  "repository": "https://github.com/orgs/UCRegistry/asset-directory.git",
+  "files": [
+    "assets.json",
+    "index.js",
+    "starname/assets.json"
+  ],
+  "author": "https://github.com/orgs/UCRegistry/teams/maintainers",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@cosmjs/encoding": "^0.23.0",
+    "husky": "^4.3.0",
+    "json-stable-stringify": "^1.0.1",
+    "node-fetch": "^2.6.1",
+    "prettier": "2.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn verify && yarn format",
+      "pre-push": "yarn verify && yarn aggregate && git diff --exit-code assets.json || ( echo '*** You need to commit assets.json. ***' ; false )"
+    }
+  },
+  "scripts": {
+    "aggregate": "node aggregate.js",
+    "add-asset": "node asset.js",
+    "format": "node format.js",
+    "verify": "node verify.js",
+    "formatPrettier": "yarn prettier --write --loglevel warn './**/*{js, json, md}'"
+  },
+  "dependencies": {}
+}
