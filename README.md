@@ -1,30 +1,17 @@
-# Digital Assets Directory #
+# **Asset ID Directory**
 
-The Digital Assets Directory references all crypto-assets by giving a unique ticker for each crypto-asset. Each asset definition is based on the CAIP-19 specification (https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md). This registry aims to become the reference when it comes to give a ticker for a crypto-asset.
+The Asset ID Directory gives a unique ticker for each digital asset (ex: BTC for Bitcoin). We define each digital asset by following the CAIP-19 specification ([https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md)).
 
-# Why are we doing this directory? #
+# Motivation
 
-Each wallet or exchange maintains currently its own registry and gives for each asset a different asset denomination. This is a problem when we want to achieve a mobile deep link standard to transfer an asset. For example today to send a bitcoin with mobile link on Trust Wallet, Bitcoin is referenced as 0 (Slip44 index) but it is referenced as BTC for the Wallet Paytomat. Because each wallet references with a different denomination each asset, it is very difficult to build a mobile deep link standard. The Digital Asset Directory aims to solve this issue.
+Providing a unique human readable identifier for each digital asset across the all crypto-ecosystem enables new services like:
 
-# To add an asset #
+- standard mobile deep link to send a digital asset on any wallets and exchanges
+- being able to reuse collaborative databases of digital assets metadata because each wallet/exchange/provider agree on the same Asset ID
 
-To add an asset to the directory simply fork this repo and do
+The only current identifier to reference asset is currently Slip44. However Slip44 only references native token. The goal of the Asset ID directory is to give a unique identifier for each digital asset. Then any provider can build their own  or collaborative database based on these identifiers.
 
-```sh
-export MY_FORK=github_id # replace 'github_id' with your github id
-git clone --recurse-submodules https://github.com/${MY_FORK}/asset-directory.git \
-  && cd asset-directory \
-  && yarn install \
-  && yarn add-asset \
-  && yarn aggregate
-```
+Regarding mobile deep linking, each wallet or exchange maintains currently its own registry and gives for each asset a different asset denomination. This is a problem when we want to achieve a mobile deep link standard to transfer an asset. For example today to send a bitcoin with mobile link on Trust Wallet, Bitcoin is referenced as 0 (Slip44 index) but it is referenced as BTC for the Wallet Paytomat. Because each wallet references with a different denomination each asset, it is very difficult to build a mobile deep link standard. The Digital Asset Directory aims to solve this issue, by making this initiative neutral and collaborative, we also aim for a massive adoption around the ecosystem.
 
-and follow the prompt(s).  Commit your changes, push, and then submit a PR.
-
-# Scripts #
-
-- [asset.js](asset.js) - adds an asset to the directory
-- [format.js](format.js) - formats all assets' json consistently, ie alphabetically sorts keys; called by the `git pre-commit` hook
-- [verify.js](verify.js) - verifies that all required properties are provided for each asset in the directory; called by the `git pre-commit` and `git pre-push` hooks
-- [aggregate.js](aggregate.js) - combines indivdual asset data into assets.json
-- [unique.js](unique.js) - reports trustwallet assets that have a collision on their symbols
+# CASA Working groups
+([Join CASA here](https://github.com/ChainAgnostic/CASA)
