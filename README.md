@@ -14,4 +14,4 @@ The only current identifier to reference asset is currently Slip44. However Slip
 Regarding mobile deep linking, each wallet or exchange maintains currently its own registry and gives for each asset a different asset denomination. This is a problem when we want to achieve a mobile deep link standard to transfer an asset. For example today to send a bitcoin with mobile link on Trust Wallet, Bitcoin is referenced as 0 (Slip44 index) but it is referenced as BTC for the Wallet Paytomat. Because each wallet references with a different denomination each asset, it is very difficult to build a mobile deep link standard. The Digital Asset Directory aims to solve this issue, by making this initiative neutral and collaborative, we also aim for a massive adoption around the ecosystem.
 
 # CASA Working groups
-([Join CASA here](https://github.com/ChainAgnostic/CASA)
+[Join Chain Agnostic Standards Alliance](https://github.com/ChainAgnostic/CASA)
