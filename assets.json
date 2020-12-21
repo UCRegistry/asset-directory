@@ -70,7 +70,7 @@
     "trustwallet-uid": "c354"
   },
   {
-    "caip-19": null,
+    "caip-19": "eosio:aca376f206b8fc25a6ed44dbdc66547c/slip44:194",
     "symbol": "EOS",
     "trustwallet-uid": "c194"
   },
