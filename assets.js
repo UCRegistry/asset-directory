@@ -155,6 +155,11 @@ export default [
     "trustwallet-uid": "c60_t0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
   },
   {
+    "caip-19": "eip155:1/erc20:0x175D9Dfd6850AA96460E29bC0cEad05756965E91",
+    "symbol": "WIOV",
+    "trustwallet-uid": "c60_t0x175D9Dfd6850AA96460E29bC0cEad05756965E91"
+  },
+  {
     "caip-19": null,
     "symbol": "XLM",
     "trustwallet-uid": "c148"
